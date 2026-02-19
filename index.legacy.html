@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Engineering and IT leader with 10+ years of experience leading multi-disciplinary teams, full-cycle software delivery, and enterprise transformation programs across global environments." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mateuszhoffman.com" />
+    <meta property="og:title" content="Mateusz Hoffman — Senior Engineering / IT Manager" />
+    <meta property="og:description"
+        content="Engineering and IT leader focused on program delivery, digital transformation, and building high-performing cross-functional teams." />
+    <title>Mateusz Hoffman | Senior Engineering / IT Manager | Program Delivery | Digital Transformation</title>
+    <link rel="canonical" href="https://mateuszhoffman.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ─── Tokens ──────────────────────────────────────────────── */
+        :root {
+            --ink: #111111;
+            --ink-2: #4A4A4A;
+            --ink-3: #999999;
+            --accent: #1B3A6B;
+            --accent-lt: #EBF0FB;
+            --accent-btn: #1D4ED8;
+            --border: #E8E8E4;
+            --white: #FFFFFF;
+            --serif: 'Bricolage Grotesque', system-ui, sans-serif;
+            --sans: 'DM Sans', system-ui, sans-serif;
+        }
+
+        /* ─── Reset ───────────────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        /* ─── Page background — subtle dot grid ─────────────────── */
+        body {
+            font-family: var(--sans);
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 72px 20px 88px;
+            line-height: 1.65;
+            color: var(--ink-2);
+
+            background-color: #F4F4F1;
+            background-image:
+                radial-gradient(circle, #C8C8C2 1px, transparent 1px);
+            background-size: 22px 22px;
+        }
+
+        /* ─── Stagger animations ──────────────────────────────────── */
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pop {
+            from {
+                opacity: 0;
+                transform: scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .s0 {
+            animation: pop .55s cubic-bezier(.22, 1, .36, 1) .00s both;
+        }
+
+        .s1 {
+            animation: rise .55s cubic-bezier(.22, 1, .36, 1) .10s both;
+        }
+
+        .s2 {
+            animation: rise .55s cubic-bezier(.22, 1, .36, 1) .20s both;
+        }
+
+        .s3 {
+            animation: rise .55s cubic-bezier(.22, 1, .36, 1) .30s both;
+        }
+
+        .s4 {
+            animation: rise .55s cubic-bezier(.22, 1, .36, 1) .40s both;
+        }
+
+        .s5 {
+            animation: rise .55s cubic-bezier(.22, 1, .36, 1) .50s both;
+        }
+
+        .s6 {
+            animation: rise .55s cubic-bezier(.22, 1, .36, 1) .60s both;
+        }
+
+        /* ─── Card shell ──────────────────────────────────────────── */
+        .card {
+            width: 100%;
+            max-width: 660px;
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow:
+                0 2px 4px rgba(0, 0, 0, .04),
+                0 8px 28px rgba(0, 0, 0, .10),
+                0 24px 56px rgba(0, 0, 0, .07);
+        }
+
+        /* ─── Hero photo ──────────────────────────────────────────── */
+        .hero-photo-wrap {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .hero-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        /* White gradient fade at the bottom of the photo */
+        .hero-photo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0) 10%,
+                    rgba(255, 255, 255, .72) 50%,
+                    rgba(255, 255, 255, .96) 68%,
+                    rgba(255, 255, 255, 1) 100%);
+            pointer-events: none;
+        }
+
+        /* ─── Avatar overlapping the photo ───────────────────────── */
+        /* Sits in a wrapper that bridges photo & content */
+        .avatar-bridge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -72px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-wrap {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 4px var(--white),
+                0 0 0 5.5px var(--border);
+            flex-shrink: 0;
+        }
+
+        .avatar-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            border-radius: 50%;
+        }
+
+        /* Fallback initials (shown if image src empty/broken) */
+        .avatar-fallback {
+            display: none;
+            /* hidden by default */
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #DBEAFE, #BFDBFE);
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* ─── Card body ───────────────────────────────────────────── */
+        .card-body {
+            padding: 4px 52px 48px;
+        }
+
+        /* ─── Hero text ───────────────────────────────────────────── */
+        .hero-text {
+            text-align: center;
+            padding-top: 14px;
+        }
+
+        .overtitle {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 8px;
+        }
+
+        h1.name {
+            font-family: var(--serif);
+            font-style: normal;
+            font-weight: 600;
+            font-size: clamp(2.2rem, 7vw, 3.1rem);
+            color: var(--ink);
+            letter-spacing: -0.025em;
+            line-height: 1.06;
+            margin-bottom: 10px;
+        }
+
+        .role-line {
+            font-family: var(--sans);
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--ink-3);
+            letter-spacing: 0.01em;
+            margin-bottom: 14px;
+        }
+
+        .location {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: var(--ink-3);
+        }
+
+        /* ─── Divider ─────────────────────────────────────────────── */
+        .sep {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 42px 0;
+        }
+
+        /* ─── Inline stats strip ──────────────────────────────────── */
+        .stats-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2px;
+        }
+
+        .stat-n {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 2.0rem;
+            color: var(--ink);
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+        .stat-l {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--ink-3);
+            margin-top: 4px;
+        }
+
+        .stat-sep {
+            width: 1px;
+            height: 36px;
+            background: var(--border);
+        }
+
+        /* ─── Bio ─────────────────────────────────────────────────── */
+        .bio {
+            font-size: 0.9375rem;
+            font-weight: 300;
+            color: var(--ink-2);
+            line-height: 1.85;
+        }
+
+        .bio strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        /* ─── Section label ───────────────────────────────────────── */
+        .label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 14px;
+        }
+
+        /* Decorative dash before label */
+        .label::before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 1.5px;
+            background: var(--border);
+            flex-shrink: 0;
+        }
+
+        /* ─── Pills ───────────────────────────────────────────────── */
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: var(--accent-lt);
+            border: 1px solid #B8CDF6;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* ─── Chips ───────────────────────────────────────────────── */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .chip {
+            padding: 5px 13px;
+            border-radius: 8px;
+            background: #FAFAF8;
+            border: 1px solid var(--border);
+            color: var(--ink-2);
+            font-size: 0.77rem;
+            font-weight: 400;
+            transition: border-color .14s, color .14s, background .14s;
+            cursor: default;
+        }
+
+        .chip:hover {
+            border-color: #93B4F0;
+            color: var(--accent);
+            background: var(--accent-lt);
+        }
+
+        .resume-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .resume-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .resume-p {
+            font-size: 0.93rem;
+            line-height: 1.8;
+            color: var(--ink-2);
+        }
+
+        .resume-list {
+            margin: 0;
+            padding-left: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .resume-list li {
+            font-size: 0.92rem;
+            line-height: 1.75;
+        }
+
+        .resume-job {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 6px;
+        }
+
+        .resume-job-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .resume-role {
+            font-size: 0.92rem;
+            color: var(--ink);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .resume-date {
+            flex-shrink: 0;
+            font-size: 0.84rem;
+            color: var(--ink-3);
+            font-weight: 500;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .resume-company {
+            font-size: 0.82rem;
+            color: var(--ink-3);
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            font-weight: 600;
+        }
+
+        /* ─── CTA ─────────────────────────────────────────────────── */
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        a.btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            font-family: var(--sans);
+            font-size: 0.845rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+            white-space: nowrap;
+            border: none;
+            transition: transform .13s ease, box-shadow .13s ease, background .13s ease, color .13s ease;
+        }
+
+        a.btn:hover {
+            transform: translateY(-1px);
+        }
+
+        a.btn svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        .btn-fill {
+            background: var(--accent-btn);
+            color: #fff;
+            padding: 12px 22px;
+            box-shadow: 0 2px 10px rgba(29, 78, 216, .2);
+        }
+
+        .btn-fill:hover {
+            background: #1E40AF;
+            box-shadow: 0 5px 20px rgba(29, 78, 216, .32);
+        }
+
+        .btn-ring {
+            background: transparent;
+            color: var(--accent);
+            box-shadow: inset 0 0 0 1.5px #93B4F0;
+            padding: 11px 22px;
+        }
+
+        .btn-ring:hover {
+            background: var(--accent-lt);
+            box-shadow: inset 0 0 0 1.5px var(--accent);
+        }
+
+        .btn-plain {
+            background: transparent;
+            color: var(--ink-3);
+            padding: 11px 4px;
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        .btn-plain:hover {
+            color: var(--accent-btn);
+            transform: none;
+        }
+
+        .cta-note {
+            margin-top: 12px;
+            color: var(--ink-3);
+            font-size: 0.77rem;
+            font-weight: 400;
+        }
+
+        .impact-grid {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 1fr;
+        }
+
+        .impact-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 14px 13px;
+            background: #fcfcfb;
+        }
+
+        .impact-title {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+
+        .impact-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--ink-2);
+        }
+
+        /* ─── Footer ──────────────────────────────────────────────── */
+        .footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #BBBBBB;
+        }
+
+        /* ─── Responsive ──────────────────────────────────────────── */
+        @media (max-width: 540px) {
+            body {
+                padding: 0 0 64px;
+            }
+
+            .card {
+                border-radius: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .card-body {
+                padding: 4px 28px 40px;
+            }
+
+            h1.name {
+                font-size: 2.4rem;
+            }
+
+            .stat-n {
+                font-size: 1.7rem;
+            }
+
+            .cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-fill,
+            .btn-ring {
+                justify-content: center;
+            }
+
+            .btn-plain {
+                text-align: center;
+            }
+
+            .resume-job-head {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .resume-date {
+                text-align: left;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card s0">
+
+        <!-- ── Full-bleed hero photo ──────────────────────────── -->
+        <div class="hero-photo-wrap">
+            <img src="./background.jpg" alt="Mateusz Hoffman speaking at a panel event" />
+        </div>
+
+        <!-- ── Avatar (overlaps photo bottom) ────────────────── -->
+        <div class="avatar-bridge s1">
+            <div class="avatar-wrap">
+                <img src="./profile-picture.jpg" alt="Mateusz Hoffman" />
+            </div>
+        </div>
+
+        <div class="card-body">
+
+            <!-- ── Name + role ──────────────────────────────────── -->
+            <section class="hero-text s1">
+                <p class="overtitle">Krakow, Poland &nbsp;·&nbsp; Open to Remote/Hybrid Roles</p>
+                <h1 class="name">Mateusz Hoffman</h1>
+                <p class="role-line">Senior Engineering / IT Manager &nbsp;|&nbsp; Program Delivery &nbsp;|&nbsp; Digital
+                    Transformation</p>
+
+                <!-- ── CTAs — immediately after identity ──── -->
+                <div class="cta s2" style="justify-content:center; margin-top:4px;">
+                    <a class="btn btn-fill" href="#resume" id="btn-resume">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        View Resume
+                    </a>
+                    <a class="btn btn-ring" href="https://linkedin.com/in/mateuszhoffman" target="_blank"
+                        rel="noopener noreferrer" id="btn-linkedin">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M20.45 20.45h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.354V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+                        </svg>
+                        View LinkedIn Profile
+                    </a>
+                    <a class="btn btn-ring" href="mailto:mateusz.hoffman@gmail.com" id="btn-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                        Contact via Email
+                    </a>
+                </div>
+                <p class="cta-note s2">Open to relevant leadership opportunities. I typically reply within 24 hours.</p>
+            </section>
+
+            <hr class="sep s3" />
+
+            <!-- ── Bio ──────────────────────────────────────────── -->
+            <section class="bio s3">
+                Engineering and IT leader with 10+ years of experience scaling teams, leading full-cycle
+                software delivery, and executing transformation programs across complex global organizations.
+                I have managed multi-disciplinary groups spanning software engineering, QA, DevOps, product
+                ownership, and project/program management. Today, I lead through Technology Leads while
+                overseeing key operational functions, including functional analysis, project management, and
+                internal communications. I work best where execution discipline, people leadership, and
+                business alignment come together to deliver measurable outcomes.
+            </section>
+
+            <hr class="sep s4" />
+
+            <!-- ── Open To ───────────────────────────────────────── -->
+            <section class="s4">
+                <p class="label">Open To</p>
+                <div class="pill-row">
+                    <span class="pill">Engineering Manager Roles</span>
+                    <span class="pill">Technical Program Manager Roles</span>
+                    <span class="pill">Senior IT Manager Roles</span>
+                    <span class="pill">Transformation &amp; Delivery Leadership</span>
+                </div>
+            </section>
+
+            <section class="s5" style="margin-top: 32px;">
+                <p class="label">Selected Impact</p>
+                <div class="impact-grid">
+                    <article class="impact-card">
+                        <p class="impact-title">Leadership Scope</p>
+                        <p class="impact-text">Led multiple cross-functional teams totaling 24+ professionals across engineering and operational functions in global delivery environments.</p>
+                    </article>
+                    <article class="impact-card">
+                        <p class="impact-title">Delivery Scale</p>
+                        <p class="impact-text">Managed and coordinated 200+ innovation and automation demands across business units through structured intake and prioritization.</p>
+                    </article>
+                    <article class="impact-card">
+                        <p class="impact-title">Business Contribution</p>
+                        <p class="impact-text">Contributed to portfolio initiatives with estimated multi-million value impact while improving delivery consistency and stakeholder confidence.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ── Skills ───────────────────────────────────────── -->
+            <section class="s5" style="margin-top: 32px;">
+                <p class="label">Core Expertise</p>
+                <div class="chips">
+                    <span class="chip">Engineering Management</span>
+                    <span class="chip">Technical Program Delivery</span>
+                    <span class="chip">Digital Transformation</span>
+                    <span class="chip">Full-Cycle Software Delivery</span>
+                    <span class="chip">Manager-of-Managers Leadership</span>
+                    <span class="chip">Cross-Functional Leadership</span>
+                    <span class="chip">Delivery Governance &amp; Prioritization</span>
+                    <span class="chip">People Leadership &amp; Team Scaling</span>
+                    <span class="chip">Stakeholder &amp; Executive Alignment</span>
+                    <span class="chip">Operational Excellence</span>
+                    <span class="chip">KPI &amp; Executive Reporting</span>
+                    <span class="chip">AI &amp; Automation Program Enablement</span>
+                </div>
+            </section>
+
+            <hr class="sep s5" />
+
+            <section class="s5" id="resume">
+                <p class="label">Resume</p>
+                <div class="resume-wrap">
+                    <div class="resume-block">
+                        <p class="resume-p">Engineering and innovation leader with 10+ years of experience across enterprise software, industrial IoT, and digital transformation. Global IT Manager for Innovation Core Services at Hitachi Energy, leading AI, XR, robotics, and automation initiatives across global business units.</p>
+                    </div>
+
+                    <div class="resume-block">
+                        <p class="label">Core Leadership Impact</p>
+                        <ul class="resume-list">
+                            <li>Lead global innovation services across multiple business units spanning AI, XR, robotics, automation, and technology scouting.</li>
+                            <li>Run a leader-of-leaders operating model across Technology Leads and operational delivery specialists, using KPI cadence and portfolio governance to drive execution.</li>
+                            <li>Support 350+ innovation ideas and requests across intake, evaluation, decisioning, and delivery, contributing $2.5M+ in estimated cost savings.</li>
+                            <li>Scaled and led two software engineering teams on ABB Ability Industrial IoT Cloud Platform (18 engineers total) while maintaining approximately 90% retention.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-block">
+                        <p class="label">Professional Experience</p>
+
+                        <article class="resume-job">
+                            <p class="resume-company">Hitachi Energy</p>
+                            <div class="resume-job-head">
+                                <p class="resume-role">Global IT Manager, Innovation Core Services</p>
+                                <p class="resume-date">Jun 2024 - Present | Krakow, Poland</p>
+                            </div>
+                            <ul class="resume-list">
+                                <li>Lead a multidisciplinary innovation team combining Technology Leads with operational delivery specialists for demand intake, portfolio governance, and project execution.</li>
+                                <li>Operate a leader-of-leaders model where each Technology Lead owns a technology domain and portfolio of prototype initiatives end-to-end.</li>
+                                <li>Direct initiatives across Artificial Intelligence, Extended Reality, Robotics, and Automation while advising global business units on alignment with operational goals.</li>
+                            </ul>
+                        </article>
+
+                        <article class="resume-job">
+                            <div class="resume-job-head">
+                                <p class="resume-role">Innovation Delivery Lead</p>
+                                <p class="resume-date">Jul 2022 - Jun 2024 | Krakow Metropolitan Area</p>
+                            </div>
+                            <ul class="resume-list">
+                                <li>Managed enterprise innovation intake, portfolio decisioning, and delivery across AI, XR, automation, and technology scouting.</li>
+                                <li>Orchestrated cross-functional teams, including technology leads and external consultant engineers, to drive project delivery.</li>
+                            </ul>
+                        </article>
+
+                        <article class="resume-job">
+                            <p class="resume-company">ABB</p>
+                            <div class="resume-job-head">
+                                <p class="resume-role">Engineering Manager, ABB Ability Industrial IoT Cloud Platform</p>
+                                <p class="resume-date">Nov 2019 - Jul 2022 | Krakow Metropolitan Area</p>
+                            </div>
+                            <ul class="resume-list">
+                                <li>Led and managed two software development teams (18 engineers total) with strong retention and consistent delivery quality.</li>
+                                <li>Coordinated technical execution across teams and stakeholders through the full software lifecycle.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="sep s5" />
+
+            <!-- ── Footer ───────────────────────────────────────── -->
+            <footer class="footer s6">
+                © 2026 Mateusz Hoffman &nbsp;·&nbsp; Based in Krakow, Poland &nbsp;·&nbsp; Open to remote and hybrid opportunities &nbsp;·&nbsp; Polish &amp; English
+            </footer>
+
+        </div><!-- /card-body -->
+    </div><!-- /card -->
+
+</body>
+
+</html>
