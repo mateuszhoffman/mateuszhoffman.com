@@ -137,7 +137,7 @@ function App() {
                   </p>
                   <h1 className="name">Mateusz Hoffman</h1>
                   <p className="role-line">
-                    Senior Engineering / IT Manager | Program Delivery | Digital Transformation
+                    Engineering/IT Management | Program Delivery | Digital Transformation
                   </p>
 
                   <div className="cta s2">
