@@ -185,9 +185,8 @@ function App() {
                 <section className="s4">
                   <p className="label">Open To Opportunities</p>
                   <div className="pill-row">
-                    <span className="pill">Senior Engineering Manager</span>
+                    <span className="pill">Engineering Manager</span>
                     <span className="pill">Technical Program Manager</span>
-                    <span className="pill">AI Engineering Manager</span>
                     <span className="pill">Digital Transformation Manager</span>
                     <span className="pill">Senior IT Manager</span>
                     <span className="pill">Director of Engineering</span>
@@ -249,8 +248,7 @@ function App() {
                 <hr className="sep s5" />
 
                 <footer className="footer s6">
-                  © 2026 Mateusz Hoffman · Based in Krakow, Poland · Open to remote and hybrid
-                  opportunities · Polish &amp; English
+                  © 2026 Made by Mateusz Hoffman
                 </footer>
               </section>
             )}
